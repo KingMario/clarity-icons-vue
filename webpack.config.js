@@ -9,7 +9,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, './dist'),
     filename: '[name].min.js',
-    library: 'webpackNumbers',
+    library: '[name]',
     libraryTarget: 'umd'
   },
   resolve: {
