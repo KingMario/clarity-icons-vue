@@ -19,7 +19,7 @@ standard CSS.
   <div style="background-color: #414957; text-align: right;">
     <clr-icon-vue shape="clarityLogo"></clr-icon-vue>
     <span style="color: #ccc;">Read More (Don't Click)</span>
-    &ltpclr-icon-vue shape="caret left" flip="vertical" :size="12" class="is-inverse"></clr-icon-vue>
+    <clr-icon-vue shape="caret left" flip="vertical" :size="12" class="is-inverse"></clr-icon-vue>
   </div>
   <clr-icon-vue shape="cog" :size="24" flip="horizontal" class="is-info has-badge"></clr-icon-vue>
   <clr-icon-vue shape="document down" :size="64" class="is-highlight has-alert"></clr-icon-vue>
