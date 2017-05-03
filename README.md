@@ -28,7 +28,7 @@ standard CSS.
 <script src="https://unpkg.com/vue/dist/vue.js"></script>
 <script src="https://unpkg.com/clarity-icons-vue/dist/ClrIconVue.min.js"></script>
 <script>
-  clarityIconAddShapes(clarityIconOptionalShapes.EssentialShapes) // add building shape set
+  clarityIconAddShapes(clarityIconOptionalShapes.EssentialShapes) // add built-in shape set
   clarityIconAddShapes({ // add additional shape
     clarityLogo: `
 <svg width="36px" height="36px" viewBox="0 0 36 36" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">

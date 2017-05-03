@@ -1,6 +1,6 @@
 {
   "name": "clarity-icons-vue",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Clarity Icons Vue Component",
   "files": ["dist", "src"],
   "main": "dist/ClrIconVue.min.js",
