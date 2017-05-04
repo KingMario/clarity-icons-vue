@@ -63,7 +63,7 @@ import Vue from 'vue'
 import clarityIconsVue from 'clarity-icons-vue'
 
 clarityIconsVue.install(Vue)
-clarityIconsVue.addShapes(clarityIconOptionalShapes.EssentialShapes)
+clarityIconsVue.addShapes(clarityIconsVue.EssentialShapes)
 ```
 
 Now you are ready to use `<clr-icon-vue>` tag in your Vue template.
