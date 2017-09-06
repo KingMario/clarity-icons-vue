@@ -1,6 +1,7 @@
 var path = require('path')
 var webpack = require('webpack')
-var StringReplacePlugin = require("string-replace-webpack-plugin")
+var StringReplacePlugin = require('string-replace-webpack-plugin')
+var CopyWebpackPlugin = require('copy-webpack-plugin')
 
 module.exports = {
   entry: {
@@ -67,6 +68,36 @@ module.exports = {
       },
       sourceMap: false
     }),
-    new StringReplacePlugin()
+    new StringReplacePlugin(),
+    new CopyWebpackPlugin([
+      {
+        from: 'src',
+        to: 'src'
+      }, {
+        from: 'package.json',
+        transform (content) {
+          let purifiedContent = JSON.parse(content.toString().replace(/dist\//g, ''))
+
+          purifiedContent.peerDependencies = {
+            vue: '^2.3.0'
+          }
+
+          return JSON.stringify(purifiedContent, [
+            'name',
+            'version',
+            'description',
+            'keywords',
+            'homepage',
+            'bugs',
+            'files',
+            'main',
+            'author',
+            'license',
+            'peerDependencies', 'vue',
+            'repository', 'type', 'url'
+          ], 2)
+        }
+      }
+    ])
   ]
 }

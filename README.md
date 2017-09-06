@@ -26,7 +26,7 @@ standard CSS.
 </app>
 
 <script src="https://unpkg.com/vue/dist/vue.js"></script>
-<script src="https://unpkg.com/clarity-icons-vue/dist/ClrIconVue.min.js"></script>
+<script src="https://unpkg.com/clarity-icons-vue"></script>
 <script>
   clarityIconAddShapes(clarityIconOptionalShapes.EssentialShapes) // add built-in shape set
   clarityIconAddShapes({ // add additional shape
