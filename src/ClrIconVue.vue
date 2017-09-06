@@ -9,7 +9,10 @@
   export default {
     name: 'ClrIconVue',
     props: {
-      shape: String,
+      shape: {
+        type: String,
+        required: true
+      },
       dir: String,
       flip: String,
       size: Number
