@@ -2,10 +2,12 @@ var path = require('path')
 var webpack = require('webpack')
 var StringReplacePlugin = require('string-replace-webpack-plugin')
 var CopyWebpackPlugin = require('copy-webpack-plugin')
+var ExtractTextPlugin = require('extract-text-webpack-plugin')
 
 module.exports = {
   entry: {
-    ClrIconVue: './src/index.js'
+    ClrIconVue: './src/index.js',
+    ClrIconShapes: './src/ClrIconShapes.js'
   },
   output: {
     path: path.resolve(__dirname, './dist'),
@@ -42,15 +44,17 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        loader: StringReplacePlugin.replace('style-loader!css-loader', {
-          replacements: [
-            {
-              pattern: /clr-icon/ig,
-              replacement: function () {
-                return '.clr-icon'
+        loader: ExtractTextPlugin.extract({
+          use: StringReplacePlugin.replace('css-loader', {
+            replacements: [
+              {
+                pattern: /clr-icon/ig,
+                replacement: function () {
+                  return '.clr-icon'
+                }
               }
-            }
-          ]
+            ]
+          })
         })
       }
     ]
@@ -69,6 +73,9 @@ module.exports = {
       sourceMap: false
     }),
     new StringReplacePlugin(),
+    new ExtractTextPlugin({
+      filename: '[name].min.css'
+    }),
     new CopyWebpackPlugin([
       {
         from: 'src',
@@ -97,6 +104,12 @@ module.exports = {
             'repository', 'type', 'url'
           ], 2)
         }
+      }, {
+        from: 'README.md',
+        to: 'README.md'
+      }, {
+        from: 'LICENSE.txt',
+        to: 'LICENSE.txt'
       }
     ])
   ]
